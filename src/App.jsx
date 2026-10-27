@@ -1,11 +1,8 @@
-import { useState } from 'react'
 import EchoText from './EchoText';
 import monocraft from './assets/Monocraft.ttf';
 import icon from './assets/icon.jpeg';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <main className="relative z-10 isolate">
       <style>{`

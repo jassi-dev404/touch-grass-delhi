@@ -59,7 +59,7 @@ const EchoText = ({
   const copyRefs = useRef([]);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
-  const echoCount = prefersReducedMotion ? 0 : clamp(Math.round(echoes), 0, 24);
+  const echoCount = clamp(Math.round(echoes), 0, 24);
   const echoIndexes = useMemo(() => Array.from({ length: echoCount }, (_, index) => echoCount - index), [echoCount]);
   const ramp = Array.isArray(echoColors) && echoColors.length ? echoColors : null;
   const canBurst = clickBurst && echoCount > 0;
@@ -85,8 +85,7 @@ const EchoText = ({
 
   useIsomorphicLayoutEffect(() => {
     const root = rootRef.current;
-    if (!root || prefersReducedMotion) return undefined;
-    if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return undefined;
+    if (!root) return undefined;
 
     const vector = directionVectors[direction] || directionVectors.right;
     const safeOffset = clamp(Number(offset) || 0, 0, 120);
@@ -102,7 +101,7 @@ const EchoText = ({
     const canHover = Boolean(window.matchMedia?.('(hover: hover) and (pointer: fine)').matches);
     const drifting = liveEnabled && trail === 'auto';
     const scrolling = liveEnabled && trail === 'scroll';
-    const following = liveEnabled && canHover && !scrolling;
+    const following = liveEnabled && (trail === 'pointer' || canHover) && !scrolling;
     const driftSpacing = 0.12 + safeLag * 1.1;
     const burstReach = clamp(safeOffset / 36, 0.35, 2.5);
     const shiftLimit = safeOffset * 4;
@@ -411,9 +410,9 @@ const EchoText = ({
   };
 
   const echoClassName = [
-    'pointer-events-none absolute inset-0 block origin-center transform-gpu backface-hidden will-change-[transform,opacity] motion-reduce:hidden',
+    'pointer-events-none absolute inset-0 block origin-center transform-gpu backface-hidden will-change-[transform,opacity]',
     echoStyle === 'outline'
-      ? '[-webkit-text-fill-color:transparent] [-webkit-text-stroke:max(1px,0.014em)_currentColor]'
+      ? '[-webkit-text-fill-color:transparent] [-webkit-text-stroke:max(1px,0.014em)_currentColor] [paint-order:stroke_fill]'
       : ''
   ]
     .join(' ')
@@ -441,7 +440,7 @@ const EchoText = ({
       ))}
       <span aria-hidden="true" className="pointer-events-none absolute inset-0" ref={burstRef} />
       <span
-        className="pointer-events-none relative z-[2] block transform-gpu text-shadow-[0_0.035em_0_rgba(255,255,255,0.04)] will-change-transform motion-reduce:[transform:none]!"
+        className="pointer-events-none relative z-[2] block transform-gpu text-shadow-[0_0.035em_0_rgba(255,255,255,0.04)] will-change-transform"
         data-echo-index="0"
         ref={element => {
           copyRefs.current[0] = element;
