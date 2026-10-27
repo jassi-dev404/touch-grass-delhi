@@ -7,7 +7,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <main>
+    <main className="relative z-10 isolate">
       <style>{`
         @font-face {
           font-family: 'Monocraft';

@@ -4,18 +4,25 @@ body {
   background: #222222;
   position: relative;
   min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body::before {
   content: "";
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  inset: -10px;
   background-image: url("./assets/texture.jpg");
   background-repeat: repeat;
   opacity: 0.01;
   pointer-events: none;
   z-index: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  contain: strict;
+}
+
+span {
+  text-rendering: optimizeSpeed !important;
 }
