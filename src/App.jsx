@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import EchoText from './EchoText';
 import monocraft from './assets/Monocraft.ttf';
+import icon from './assets/icon.jpeg';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +17,8 @@ function App() {
           font-display: swap;
         }
       `}</style>
+
+      <link rel="icon" type="image/x-icon" href={icon}></link>
       
       <div className="flex flex-row pt-10 justify-center items-center">
         <EchoText

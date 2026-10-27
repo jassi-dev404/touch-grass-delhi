@@ -2,4 +2,20 @@
 
 body {
   background: #222222;
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url("./assets/texture.jpg");
+  background-repeat: repeat;
+  opacity: 0.01;
+  pointer-events: none;
+  z-index: 1;
 }
