@@ -17,9 +17,9 @@ import nitik2 from "./assets/pics/nitik2.jpg"
 
 const items = [
   { src: aditya1, alt: 'Aditya with his kuchupuchu', title: 'aditya the head organizer' },
-  { src: jassi1, alt: 'yes its me, same person coding this at 4am', title: 'jassi the chief tech officer' },
+  { src: jassi1, alt: 'yes its me, same person coding this at 4am', title: 'jassi the chief tech organizer' },
   { src: nitik1, alt: 'A clay bust in profile', title: 'nitik the vice-head organizer' },
-  { src: jassi2, alt: 'yes its me, same person coding this at 4am', title: 'jassi the chief tech officer' },
+  { src: jassi2, alt: 'yes its me, same person coding this at 4am', title: 'jassi the chief tech organizer' },
   { src: nitik2, alt: 'yes its me, same person coding this at 4am', title: 'nitik the vice-head organizer' }
 ];
 
