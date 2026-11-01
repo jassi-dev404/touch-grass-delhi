@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import EchoText from "./EchoText";
 import PillNav from "./PillNav";
 import LogoLoop from "./LogoLoop";
