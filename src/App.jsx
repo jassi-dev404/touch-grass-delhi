@@ -260,7 +260,7 @@ function App() {
         </div>
         <hr></hr>
         <br></br>
-        <h1 class="text-8xl font-[monocraft] text-[#3d6c03]">CONTACT US:</h1>
+        <h1 class="text-8xl pl-2 font-[monocraft] text-[#3d6c03]">CONTACT US:</h1>
         <ol id="cool_yes">
           <li class="text-3xl pl-2 font-[monocraft] text-[#b5ff00]"><u><span><a href="https://www.instagram.com/touchgrassdelhi?xtok=MWJmMTBzMW92ajU1cg==" target="_blank">INSTAGRAM</a></span></u></li>
           <li class="text-3xl pl-2 font-[monocraft] text-[#b5ff00]"><u><span><a href="mailto:touchgrasshackathon@gmail.com" target="_blank">EMAIL</a></span></u></li>
