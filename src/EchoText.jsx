@@ -409,10 +409,12 @@ const EchoText = ({
     ...style
   };
 
+  const hasCustomStroke = className.includes('text-stroke') || Boolean(style && (style.WebkitTextStroke || style.textStroke));
+
   const echoClassName = [
     'pointer-events-none absolute inset-0 block origin-center transform-gpu backface-hidden will-change-[transform,opacity]',
     echoStyle === 'outline'
-      ? '[-webkit-text-fill-color:transparent] [-webkit-text-stroke:max(1px,0.014em)_currentColor] [paint-order:stroke_fill]'
+      ? '[-webkit-text-fill-color:transparent] [-webkit-text-stroke:inherit] [paint-order:stroke_fill]'
       : ''
   ]
     .join(' ')
@@ -421,7 +423,9 @@ const EchoText = ({
   return (
     <span
       ref={rootRef}
-      className={`relative inline-block whitespace-nowrap select-none leading-[0.9] tracking-[-0.04em] [contain:layout_style] [font-kerning:normal] [text-rendering:geometricPrecision] ${className}`.trim()}
+      className={`relative inline-block whitespace-nowrap select-none leading-[0.9] tracking-[-0.04em] [contain:layout_style] [font-kerning:normal] [text-rendering:geometricPrecision] ${
+        echoStyle === 'outline' && !hasCustomStroke ? '[-webkit-text-stroke:max(1px,0.014em)_currentColor]' : ''
+      } ${className}`.trim()}
       style={rootStyle}
     >
       {echoIndexes.map(index => (

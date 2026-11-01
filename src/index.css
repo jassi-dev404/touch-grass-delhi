@@ -23,10 +23,32 @@ body::before {
   contain: strict;
 }
 
+
 span {
   text-rendering: optimizeSpeed !important;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+#first {
+background-image: url("assets/sitting_man.png");
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: 100% 100%;
+}
+
+#logo {
+  float: right;
+  margin-top: -20;
+  transform: translateY(-50px);
+  padding: 0;
+  width: auto;
+  height: 304px;
+  font-family: cool_font;
+  font-size: 37px;
+  border-radius: 10px;
+  touch-action: none;
+  user-select: none;
 }
