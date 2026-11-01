@@ -1,14 +1,13 @@
 import EchoText from "./EchoText";
 import PillNav from "./PillNav";
 import Title from "./assets/Title.ttf";
-import icon from "./assets/icon.jpeg";
 import cool_grass from "./assets/cool_grass.png";
 import logo from "./assets/touch_hindi.png";
 
 function App() {
   return (
     <main className="relative z-10 isolate">
-      <link rel="icon" type="image/x-icon" href={icon}></link>
+      <link rel="icon" type="image/x-icon" href={logo}></link>
       <style>{`
         @font-face {
           font-family: 'Title';
@@ -46,56 +45,55 @@ function App() {
 
         <img src={cool_grass} className="h-75 w-auto z-0"></img>
         <div className="flex flex-col justify-center items-center">
+
           <div className="flex flex-row justify-center items-center z-10">
             <EchoText
               text="TOUCHGRASS DELHI"
-              echoes={10}
-              lag={0.2}
-              offset={44}
-              direction="diagonal"
-              fade={0.84}
-              blur={0}
+              className="[-webkit-text-stroke:5px_#012304]"
+              fontSize="clamp(6rem, 19vw, 14rem)"
+              font="Title, monospace"
+              echoes={18}
+              lag={0.23}
+              offset={36}
+              direction="right"
+              fade={0.65}
+              blur={3}
               tint={false}
-              echoStyle="outline"
+              echoStyle="solid"
               echoScale={1}
               mode="pointer"
               trail="pointer"
-              font="Title, monospace"
               clickBurst={false}
               cursorRadius={320}
-              className="[-webkit-text-stroke:4px_#36454F]"
-              duration={1100}
-              ease="snappy"
-              fontSize="clamp(9rem, 21vw, 17rem)"
-              fontWeight={1500}
-              echoColors={["currentColor", "#10b981"]}
-              color="#ECE9DF"
+              duration={900}
+              ease="ease-in-out"
+              fontWeight={700}
+              color="#b5ff00"
             />
           </div>
           <div className="flex flex-row pt-10 justify-center items-center">
             <EchoText
               text="CODE. CREATE. TOUCH GRASS."
-              echoes={10}
-              lag={0.2}
-              className="[-webkit-text-stroke:2px_#36454F]"
-              offset={44}
-              direction="diagonal"
-              fade={0.84}
-              blur={0}
+              className="[-webkit-text-stroke:3px_#012304]"
+              font="Title, monospace"
+              fontSize="clamp(3rem, 6vw, 5rem)"
+              echoes={18}
+              lag={0.23}
+              offset={36}
+              direction="right"
+              fade={0.65}
+              blur={3}
               tint={false}
-              echoStyle="outline"
+              echoStyle="solid"
               echoScale={1}
               mode="pointer"
               trail="pointer"
-              font="Title, monospace"
               clickBurst={false}
               cursorRadius={320}
-              duration={1100}
-              ease="snappy"
-              fontSize="clamp(3rem, 6vw, 5rem)"
-              fontWeight={1200}
-              echoColors={["currentColor", "#10b981"]}
-              color="#ECE9DF"
+              duration={900}
+              ease="ease-in-out"
+              fontWeight={700}
+              color="#b5ff00"
             />
           </div>
         </div>
