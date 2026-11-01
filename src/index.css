@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #222222;
   position: relative;
@@ -41,6 +45,13 @@ background-size: 100% 100%;
 
 #second {
 background-image: url("assets/2nd_img.png");
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: 100% 100%;
+}
+
+#details {
+background-image: url("assets/Details.png");
 background-repeat: no-repeat;
 background-attachment: fixed;
 background-size: 100% 100%;

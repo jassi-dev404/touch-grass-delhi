@@ -67,8 +67,10 @@ function App() {
             items={[
               { label: "Start", href: "#first" },
               { label: "Sponsors", href: "#second" },
-              { label: "Photos", href: "/photos" },
-              { label: "About", href: "/about" },
+              { label: "Details", href: "#details"},
+              { label: "Organizers", href: "#organisers" },
+              { label: "Join Slack", href: "https://hackclub.enterprise.slack.com/archives/C0CBJT68171" },
+              { label: "Register", href: "https://docs.google.com/forms/d/e/1FAIpQLScF8G5HjINZx5b4ulPnZ7N5Ly30h4t9xGdVaWk2UocRqsythg/viewform?pli=1" }
             ]}
             activeHref="/"
             itemStyle="plain"
@@ -138,6 +140,9 @@ function App() {
         <br />
         <br />
         <br />
+        <br />
+        <br />
+        <br/>
       </div>
 
       <div id="second" className="flex flex-col justify-center items-center -mt-28 pb-5 w-full">
@@ -171,6 +176,50 @@ function App() {
           />
         </div>
         <img src={more_info} class="object-cover transition-transform duration-500 hover:scale-110 z-30"></img>
+      </div>
+      <div id="details">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br/>
       </div>
     </main>
   );
