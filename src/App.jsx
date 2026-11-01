@@ -5,8 +5,13 @@ import Title from "./assets/Title.ttf";
 import cool_grass from "./assets/cool_grass.png";
 import logo from "./assets/touch_hindi.png";
 import our_sponsor from "./assets/our_sponsor.png";
-import secondImage from "./assets/2nd_img.png";
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from "react-icons/si";
+import more_info from "./assets/more_info.png"
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+} from "react-icons/si";
 
 const techLogos = [
   {
@@ -36,7 +41,7 @@ const techLogos = [
 
 function App() {
   return (
-    <main className="relative z-10 isolate">
+    <main className="relative z-10 isolate min-h-screen">
       <link rel="icon" type="image/png" href={logo} />
       <style>{`
         @font-face {
@@ -48,7 +53,7 @@ function App() {
         }
       `}</style>
 
-      <div id="first" className="relative">
+      <div id="first" className="relative pb-32">
         <img
           id="logo"
           src={logo}
@@ -57,11 +62,11 @@ function App() {
           className="object-cover transition-transform duration-500 hover:rotate-10 z-30"
         />
 
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 pt-10 z-20 flex justify-center items-center">
+        <div className="fixed top-0 left-1/2 -translate-x-1/2 pt-10 z-50 flex justify-center items-center">
           <PillNav
             items={[
-              { label: "Home", href: "#first" },
-              { label: "Journal", href: "#second" },
+              { label: "Start", href: "#first" },
+              { label: "Sponsors", href: "#second" },
               { label: "Photos", href: "/photos" },
               { label: "About", href: "/about" },
             ]}
@@ -73,6 +78,7 @@ function App() {
         </div>
 
         <img src={cool_grass} alt="Grass" className="h-75 w-auto z-0" />
+
         <div className="flex flex-col justify-center items-center">
           <div className="flex flex-row justify-center items-center z-10">
             <EchoText
@@ -132,36 +138,39 @@ function App() {
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
       </div>
 
-      <div id="second" className="flex flex-col justify-center items-center">
-        <img src={our_sponsor} alt="Our sponsors" />
-        <div class="pt-10">
+      <div id="second" className="flex flex-col justify-center items-center -mt-28 pb-5 w-full">
+        <img src={our_sponsor} alt="Our sponsors" class="object-cover transition-transform duration-500 hover:rotate-10 hover:scale-125 z-30" />
+        <p>just examples for now ;)</p>
+
+        <div className="-mt-90 w-full overflow-hidden">
           <LogoLoop
             logos={techLogos}
-            speed={130}
+            layout="wave"
             direction="left"
-            logoHeight={54}
-            gap={20}
-            hoverSpeed={50}
-            scaleOnHover
-            bend={0.6}
-            magnify={0.8}
             labels="hover"
+            speed={100}
+            hoverSpeed={0}
+            logoHeight={44}
+            gap={56}
+            bend={0.5}
+            focus={0.7}
+            magnify={2}
             muted={1}
-            focus={0.5}
-            step
+            tiltX={0}
+            tiltY={0}
             fadeOutWidth={0}
+            scrollBoost={0}
+            fadeOut={true}
+            step={true}
             draggable={false}
+            scaleOnHover={false}
+            intro={true}
+            ariaLabel="Our Sponsors"
           />
         </div>
-        <br />
+        <img src={more_info} class="object-cover transition-transform duration-500 hover:scale-110 z-30"></img>
       </div>
     </main>
   );
