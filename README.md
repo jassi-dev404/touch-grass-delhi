@@ -1,4 +1,4 @@
 # Touch Grass Delhi's Website
 ## Yes This Is The Repo For Touch Grass Delhi's Website, Made By Yours Truly ;P
 
- i dont got anything else to say :sob:
+ i dont got anything else to say :sob:, run it by um doing npm install and then npm run dev :))
