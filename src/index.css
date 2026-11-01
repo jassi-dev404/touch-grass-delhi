@@ -39,6 +39,13 @@ background-attachment: fixed;
 background-size: 100% 100%;
 }
 
+#second {
+background-image: url("assets/2nd_img.png");
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: 100% 100%;
+}
+
 #logo {
   float: right;
   margin-top: -20;
