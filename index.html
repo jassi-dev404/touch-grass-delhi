@@ -4,9 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TouchGrass Delhi</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://touchgrassdelhi.xyz/" />
+    <meta property="og:title" content="The Website For TouchGrass Delhi, The Only Hackathon Which Is Done Outdoors" />
+    <meta property="og:description"
+      content="a very cool hackathon made which has a very cool made by a very cool person ;)" />
+    <meta property="og:image" content="https://touchgrassdelhi.xyz/src/assets/touch_hindi.png" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+    if (
+      /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent,
+      )
+    ) {
+      window.location.replace("/mobile.html");
+    }
+    </script>
   </body>
 </html>
