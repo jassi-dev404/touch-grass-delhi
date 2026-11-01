@@ -57,6 +57,16 @@ const techLogos = [
 ];
 
 function App() {
+
+    useEffect(() => {
+      const isMobile = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+      if (isMobile && !window.location.pathname.includes("mobile.html")) {
+        window.location.replace("/mobile.html");
+      }
+    }, []);
+
   return (
     <main className="relative z-10 isolate min-h-screen">
       <link rel="icon" type="image/png" href={logo} />
