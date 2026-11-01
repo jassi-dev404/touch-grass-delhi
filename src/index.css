@@ -1,4 +1,16 @@
 @import "tailwindcss";
+@theme {
+  --color-whitish: #F9F6EF;
+}
+
+@font-face {
+  font-family: monocraft;
+  src: url("assets/Monocraft.ttf"); /* url of the font */
+}
+
+#cool_yes {
+  -webkit-text-stroke: 0.6px #012304;
+}
 
 html {
   scroll-behavior: smooth;
@@ -52,6 +64,20 @@ background-size: 100% 100%;
 
 #details {
 background-image: url("assets/Details.png");
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: 100% 100%;
+}
+
+#contact {
+background-image: url("assets/oraganizers_bg.png");
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: 100% 100%;
+}
+
+#organizers {
+background-color: #F9F6EE;
 background-repeat: no-repeat;
 background-attachment: fixed;
 background-size: 100% 100%;

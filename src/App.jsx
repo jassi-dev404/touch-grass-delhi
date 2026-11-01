@@ -1,11 +1,28 @@
 import EchoText from "./EchoText";
 import PillNav from "./PillNav";
 import LogoLoop from "./LogoLoop";
+import FlexCarousel from './FlexCarousel';
 import Title from "./assets/Title.ttf";
 import cool_grass from "./assets/cool_grass.png";
 import logo from "./assets/touch_hindi.png";
 import our_sponsor from "./assets/our_sponsor.png";
 import more_info from "./assets/more_info.png"
+import organizers_t from "./assets/organizers_t.png"
+import aditya1 from "./assets/pics/aditya1.png"
+import jassi1 from "./assets/pics/jassi1.jpg"
+import nitik1 from "./assets/pics/nitik1.JPG"
+import jassi2 from "./assets/pics/jassi2.jpg"
+import nitik2 from "./assets/pics/nitik2.jpg"
+
+
+const items = [
+  { src: aditya1, alt: 'Aditya with his kuchupuchu', title: 'aditya the head organizer' },
+  { src: jassi1, alt: 'yes its me, same person coding this at 4am', title: 'jassi the chief tech officer' },
+  { src: nitik1, alt: 'A clay bust in profile', title: 'nitik the vice-head organizer' },
+  { src: jassi2, alt: 'yes its me, same person coding this at 4am', title: 'jassi the chief tech officer' },
+  { src: nitik2, alt: 'yes its me, same person coding this at 4am', title: 'nitik the vice-head organizer' }
+];
+
 import {
   SiReact,
   SiNextdotjs,
@@ -68,7 +85,7 @@ function App() {
               { label: "Start", href: "#first" },
               { label: "Sponsors", href: "#second" },
               { label: "Details", href: "#details"},
-              { label: "Organizers", href: "#organisers" },
+              { label: "Organizers", href: "#organizers" },
               { label: "Join Slack", href: "https://hackclub.enterprise.slack.com/archives/C0CBJT68171" },
               { label: "Register", href: "https://docs.google.com/forms/d/e/1FAIpQLScF8G5HjINZx5b4ulPnZ7N5Ly30h4t9xGdVaWk2UocRqsythg/viewform?pli=1" }
             ]}
@@ -221,8 +238,41 @@ function App() {
         <br />
         <br/>
       </div>
+      <div id="organizers">
+        <br></br>
+        <br></br>
+        <img src={organizers_t} alt="Our organizers" class="object-cover transition-transform duration-500 rotate-10 hover:-rotate-10 hover:scale-125 z-30" />
+        <hr></hr>
+        <div style={{ width: '100%', height: '560px', position: 'relative', backgroundColor: "#F9F6EE"}}>
+          <FlexCarousel
+            items={items}
+            preset="liquid"
+            intro="bloom"
+            cardHeight={0.5}
+            gap={12}
+            squeeze={0.18}
+            focusOnClick
+            captions
+            tilt={41}
+            autoplay
+            interval={2}
+          />
+        </div>
+        <hr></hr>
+        <br></br>
+        <h1 class="text-8xl font-[monocraft] text-[#3d6c03]">CONTACT US:</h1>
+        <ol id="cool_yes">
+          <li class="text-3xl pl-2 font-[monocraft] text-[#b5ff00]"><u><span><a href="https://www.instagram.com/touchgrassdelhi?xtok=MWJmMTBzMW92ajU1cg==" target="_blank">INSTAGRAM</a></span></u></li>
+          <li class="text-3xl pl-2 font-[monocraft] text-[#b5ff00]"><u><span><a href="mailto:touchgrasshackathon@gmail.com" target="_blank">EMAIL</a></span></u></li>
+          <li class="text-3xl pl-2 font-[monocraft] text-[#b5ff00]"><u><span><a href="tel:+919354232874" target="_blank">PHONE/WHATSAPP</a></span></u></li>
+        </ol>
+        <hr></hr>
+        <p class="bg-whitish flex justify-center items-center font-mono text-6xl">made with love by..<u><span class="text-zinc-500"><a href="https://github.com/jassi-dev404" target="_blank">jassi</a></span></u></p>
+        <hr></hr>
+      </div>
     </main>
   );
 }
+
 
 export default App;
