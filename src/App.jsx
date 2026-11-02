@@ -76,65 +76,62 @@ function App() {
         }
       `}</style>
 
-      <div id="first" className="relative pb-32 min-h-screen">
+      <div id="first" className="relative pb-16 md:pb-32 min-h-screen">
         <img
           id="logo"
           src={logo}
           alt="Touch Grass Delhi"
           style={{ position: "absolute", right: "1px", top: "10px" }}
-          className="object-cover transition-transform duration-500 hover:rotate-10 z-30 h-16 md:h-auto"
+          className="hidden md:block object-cover transition-transform duration-500 hover:rotate-10 z-30"
         />
 
-        <div className="fixed top-0 left-1/2 -translate-x-1/2 pt-6 z-50 flex justify-center items-center">
-          <PillNav
-            items={[
-              { label: "Start", href: "#first" },
-              { label: "Sponsors", href: "#second" },
-              { label: "Details", href: "#details" },
-              { label: "Organizers", href: "#organizers" },
-              { label: "Connect", href: "https://hackclub.enterprise.slack.com/archives/C0CBJT68171" },
-              { label: "Register", href: "https://docs.google.com/forms/d/e/1FAIpQLScF8G5HjINZx5b4ulPnZ7N5Ly30h4t9xGdVaWk2UocRqsythg/viewform?pli=1" }
-            ]}
-            activeHref="/"
-            itemStyle="plain"
-            hoverEffect="glide"
-            indicator="pill"
-          />
+        <div className="fixed top-0 inset-x-0 pt-4 md:pt-6 z-50 flex justify-center items-center px-2 pointer-events-none">
+          <div className="pointer-events-auto max-w-full overflow-x-auto scrollbar-none flex justify-center items-center mx-auto">
+            <PillNav
+              items={[
+                { label: "Start", href: "#first" },
+                { label: "Sponsors", href: "#second" },
+                { label: "Details", href: "#details" },
+                { label: "Organizers", href: "#organizers" },
+                { label: "Connect", href: "https://hackclub.enterprise.slack.com/archives/C0CBJT68171" },
+                { label: "Register", href: "https://docs.google.com/forms/d/e/1FAIpQLScF8G5HjINZx5b4ulPnZ7N5Ly30h4t9xGdVaWk2UocRqsythg/viewform?pli=1" }
+              ]}
+              activeHref="/"
+              itemStyle="plain"
+              hoverEffect="glide"
+              indicator="pill"
+              collapse="never"
+              size="md"
+            />
+          </div>
         </div>
 
-        <div className="relative flex flex-col justify-center items-center pt-20">
-          <img src={main_img} className="object-cover transition-transform duration-500 hover:scale-120 z-30" />
+        <div className="relative flex flex-col justify-center items-center pt-24 md:pt-20">
+          <img src={main_img} className="object-cover transition-transform duration-500 hover:scale-120 z-30 max-w-full md:max-w-full" />
         </div>
       </div>
 
-      <div id="second" className="flex flex-col justify-center items-center -mt-28 pb-5 w-full">
+      <div id="second" className="flex flex-col justify-center items-center mt-0 md:-mt-28 pb-5 w-full">
         <img
           src={our_sponsor}
           alt="Our sponsors"
-          className="object-cover transition-transform duration-500 hover:rotate-10 hover:scale-125 z-30"
+          className="object-cover transition-transform duration-500 hover:rotate-10 hover:scale-125 z-30 mb-8 md:mb-0 max-w-[95%] md:max-w-full"
         />
-        {isMobile && (
-          <>
-            <br />
-            <br />
-            <br />
-          </>
-        )}
-        <hr></hr>
-        <div className="-mt-24 w-full overflow-hidden bg-whitish h-32 md:h-auto flex flex-col justify-center">
+        <hr className="w-full" />
+        <div className="mt-0 md:-mt-24 w-full overflow-hidden bg-whitish h-24 md:h-auto flex flex-col justify-center">
           <hr></hr>
           <LogoLoop
             logos={imageLogos}
-            layout="wave"
+            layout={isMobile ? "straight" : "wave"}
             direction="left"
             labels="below"
             speed={100}
             hoverSpeed={0}
-            logoHeight={isMobile ? 28 : 40}
-            gap={56}
+            logoHeight={isMobile ? 35 : 40}
+            gap={isMobile ? 24 : 56}
             bend={0.5}
-            focus={1}
-            magnify={2}
+            focus={isMobile ? 0.2 : 1}
+            magnify={isMobile ? 0 : 2}
             muted={1}
             tiltX={0}
             tiltY={0}
@@ -152,24 +149,24 @@ function App() {
 
         <img
           src={more_info}
-          className="object-cover transition-transform duration-500 hover:scale-110 z-30 w-[80%]"
+          className="object-cover transition-transform duration-500 hover:scale-110 z-30 w-[95%] md:w-[80%] mt-6 md:mt-0"
         />
         <br></br>
         <br></br>
       </div>
 
-      <div id="details" className="flex flex-col justify-center items-center -mt-28 pb-5 w-full">
+      <div id="details" className="flex flex-col justify-center items-center mt-0 md:-mt-28 pb-5 w-full">
         <br />
         <br />
         <br />
         <img
           src={details_h}
-          className={`object-cover transition-transform duration-500 rotate-3 hover:scale-150 z-30 pt-20 ${
+          className={`object-cover transition-transform duration-500 rotate-3 hover:scale-150 z-30 pt-10 md:pt-20 max-w-[95%] md:max-w-full ${
             isMobile ? "blur-none" : "blur-xs hover:blur-none"
           }`}
         />
-        <img src={info_d} className="object-cover transition-transform duration-500 z-30 hover:scale-110" id="info_d"></img>
-        <img src={grass_h} className="object-cover transition-transform duration-500 z-30 hover:scale-110 rotate-12 hover:-rotate-12"></img>
+        <img src={info_d} className="object-cover transition-transform duration-500 z-30 hover:scale-110 max-w-[90%] md:max-w-full" id="info_d"></img>
+        <img src={grass_h} className="object-cover transition-transform duration-500 z-30 hover:scale-110 md:rotate-12 hover:-rotate-12 max-w-[95%] md:max-w-full"></img>
         <br></br>
         <br></br>
         <br></br>
@@ -182,22 +179,22 @@ function App() {
         <img
           src={organizers_t}
           alt="Our organizers"
-          className="object-cover transition-transform duration-500 rotate-10 hover:-rotate-10 hover:scale-125 z-30"
+          className="object-cover transition-transform duration-500 md:rotate-10 hover:-rotate-10 hover:scale-125 z-30 max-w-[95%] md:max-w-full mx-auto"
         />
 
         <hr />
 
-        <div style={{ width: "100%", height: "560px", position: "relative", backgroundColor: "#F9F6EE" }}>
+        <div style={{ width: "100%", height: isMobile ? "450px" : "560px", position: "relative", backgroundColor: "#F9F6EE" }}>
           <FlexCarousel
             items={items}
-            preset="liquid"
+            preset={isMobile ? "arch" : "liquid"}
             intro="bloom"
-            cardHeight={0.5}
-            gap={12}
-            squeeze={0.18}
+            cardHeight={isMobile ? 0.4 : 0.5}
+            gap={isMobile ? 15 : 12}
+            squeeze={isMobile ? 1 : 0.18}
             focusOnClick
             captions
-            tilt={41}
+            tilt={isMobile ? 10 : 41}
             autoplay
             interval={2}
           />
@@ -246,6 +243,12 @@ function App() {
               jassi
             </a>
           </p>
+
+          <img
+            src={logo}
+            alt="Touch Grass Delhi"
+            className="block md:hidden object-cover transition-transform duration-500 hover:rotate-10 z-30 h-16 mt-2 scale-400"
+          />
         </div>
 
         <hr />

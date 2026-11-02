@@ -1,5 +1,3 @@
-'use client';
-
 import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
 
 const THEMES = {
@@ -46,9 +44,9 @@ const SIZES = {
     '--pn-h': '36px',
     '--pn-pad': '3px',
     '--pn-inner': '30px',
-    '--pn-x': '12px',
-    '--pn-font': '13px',
-    '--pn-gap': '6px',
+    '--pn-x': '10px',
+    '--pn-font': '12px',
+    '--pn-gap': '4px',
     '--pn-mark': '18px'
   },
   md: {
@@ -595,6 +593,7 @@ const PillNav = ({
       if (!element) return;
       const width = element.offsetWidth;
       const height = element.offsetHeight;
+      if (!width || !height) return;
       element.animate(
         [
           { clipPath: `inset(0px ${Math.max(0, width - height)}px 0px 0px round ${height / 2}px)` },
