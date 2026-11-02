@@ -1,8 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PillNav from "./PillNav";
 import LogoLoop from "./LogoLoop";
 import FlexCarousel from "./FlexCarousel";
 import Title from "./assets/Title.ttf";
+import info_d from "./assets/info_d.png";
+import kv from "./assets/kv.png";
 import logo from "./assets/touch_hindi.png";
 import our_sponsor from "./assets/our_sponsor.png";
 import more_info from "./assets/more_info.png";
@@ -12,10 +14,12 @@ import jassi1 from "./assets/pics/jassi1.jpeg";
 import jassi2 from "./assets/pics/jassi2.jpeg";
 import nitik2 from "./assets/pics/nitik2.jpeg";
 import aditya2 from "./assets/pics/aditya2.jpg";
-import nitik3 from "./assets/pics/nitik3.jpeg"
+import nitik3 from "./assets/pics/nitik3.jpeg";
+import grass_h from "./assets/grass_hand.png";
+import details_h from "./assets/details_head.png";
 import main_img from "./assets/main_head.png";
-import vansh1 from "./assets/pics/vansh1.jpeg"
-import vansh2 from "./assets/pics/vansh2.jpeg"
+import vansh1 from "./assets/pics/vansh1.jpeg";
+import vansh2 from "./assets/pics/vansh2.jpeg";
 import xyz from "./assets/xyz.png";
 import education from "./assets/education.png";
 import aadarsh1 from "./assets/pics/aadarsh1.jpeg";
@@ -27,18 +31,23 @@ const items = [
   { src: nitik3, alt: "nitik wow very cool guy", title: "nitik the vice-head organizer" },
   { src: jassi2, alt: "yes its me, same person coding this at 4am", title: "jassi the chief tech organizer" },
   { src: nitik2, alt: "nitik wow very cool guy", title: "nitik the vice-head organizer" },
-  { src: aadarsh1, alt: "yes he did something", title: "aadarsh from logistic department" },
+  { src: aadarsh1, alt: "yes he did something", title: "aadarsh from logistics department" },
   { src: vansh2, alt: "the designer (who is late many times)", title: "vansh the chief design organizer" },
-  { src: vansh1, alt: "the designer (who is late many times)", title: "vansh the chief design organizer"}
+  { src: vansh1, alt: "the designer (who is late many times)", title: "vansh the chief design organizer" }
 ];
 
 const imageLogos = [
-  { src: xyz, alt: ".XYZ", title: ".XYZ", href: "https://gen.xyz/" },
+  { src: xyz, alt: ".xyz", title: ".xyz", href: "https://gen.xyz/" },
   { src: education, alt: "Shekunj Education", title: "Shekunj Education", href: "https://www.shekunj.com/" },
+  { src: kv, alt: "Kv", title: "Kendriya Vidyalaya Sangathan", href: "https://no1delhicantt.kvs.ac.in/" }
 ];
 
 function App() {
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
+    setIsMobile(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+
     const updateViewportHeight = () => {
       document.documentElement.style.setProperty("--app-height", `${window.innerHeight}px`);
     };
@@ -106,7 +115,7 @@ function App() {
         />
         <hr></hr>
         <div className="-mt-24 w-full overflow-hidden bg-whitish">
-        <hr></hr>
+          <hr></hr>
           <LogoLoop
             logos={imageLogos}
             layout="wave"
@@ -131,57 +140,32 @@ function App() {
             intro={true}
             ariaLabel="Our Sponsors"
           />
-                  <hr></hr>
+          <hr></hr>
         </div>
 
         <img
           src={more_info}
           className="object-cover transition-transform duration-500 hover:scale-110 z-30 w-[80%]"
         />
+        <br></br>
+        <br></br>
       </div>
 
-      <div id="details">
+      <div id="details" className="flex flex-col justify-center items-center -mt-28 pb-5 w-full">
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        <img
+          src={details_h}
+          className={`object-cover transition-transform duration-500 rotate-3 hover:scale-150 z-30 pt-20 ${
+            isMobile ? "blur-none" : "blur-xs hover:blur-none"
+          }`}
+        />
+        <img src={info_d} className="object-cover transition-transform duration-500 z-30 hover:scale-110" id="info_d"></img>
+        <img src={grass_h} className="object-cover transition-transform duration-500 z-30 hover:scale-110 rotate-12 hover:-rotate-12"></img>
+        <br></br>
+        <br></br>
+        <br></br>
       </div>
 
       <div id="organizers">
