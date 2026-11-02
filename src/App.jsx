@@ -1,33 +1,35 @@
 import { useEffect } from "react";
-import EchoText from "./EchoText";
 import PillNav from "./PillNav";
 import LogoLoop from "./LogoLoop";
 import FlexCarousel from "./FlexCarousel";
 import Title from "./assets/Title.ttf";
-import cool_grass from "./assets/cool_grass.png";
 import logo from "./assets/touch_hindi.png";
 import our_sponsor from "./assets/our_sponsor.png";
 import more_info from "./assets/more_info.png";
 import organizers_t from "./assets/organizers_t.png";
-import aditya1 from "./assets/pics/aditya1.png";
-import jassi1 from "./assets/pics/jassi1.jpg";
-import nitik1 from "./assets/pics/nitik1.JPG";
-import jassi2 from "./assets/pics/jassi2.jpg";
-import nitik2 from "./assets/pics/nitik2.jpg";
+import aditya1 from "./assets/pics/aditya1.jpeg";
+import jassi1 from "./assets/pics/jassi1.jpeg";
+import jassi2 from "./assets/pics/jassi2.jpeg";
+import nitik2 from "./assets/pics/nitik2.jpeg";
 import aditya2 from "./assets/pics/aditya2.jpg";
+import nitik3 from "./assets/pics/nitik3.jpeg"
 import main_img from "./assets/main_head.png";
+import vansh1 from "./assets/pics/vansh1.jpeg"
+import vansh2 from "./assets/pics/vansh2.jpeg"
 import xyz from "./assets/xyz.png";
 import education from "./assets/education.png";
 import aadarsh1 from "./assets/pics/aadarsh1.jpeg";
 
 const items = [
-  { src: aditya1, alt: "Aditya with his kuchupuchu", title: "aditya the head organizer" },
-  { src: aditya2, alt: "Aditya with his kuchupuchu", title: "aditya the head organizer" },
-  { src: jassi1, alt: "yes its me, same person coding this at 4am", title: "jassi the chief tech organizer" },
-  { src: nitik1, alt: "nitik wow very cool guy", title: "nitik the vice-head organizer" },
+  { src: aditya1, alt: "Aditya very nice", title: "aditya the head organizer" },
+  { src: aditya2, alt: "Aditya with flowers", title: "aditya the head organizer" },
+  { src: jassi1, alt: "yes its me, same person coding this at 4am now with nitik", title: "jassi the chief tech organizer (with nitik)" },
+  { src: nitik3, alt: "nitik wow very cool guy", title: "nitik the vice-head organizer" },
   { src: jassi2, alt: "yes its me, same person coding this at 4am", title: "jassi the chief tech organizer" },
   { src: nitik2, alt: "nitik wow very cool guy", title: "nitik the vice-head organizer" },
   { src: aadarsh1, alt: "yes he did something", title: "aadarsh from logistic department" },
+  { src: vansh2, alt: "the designer (who is late many times)", title: "vansh the chief design organizer" },
+  { src: vansh1, alt: "the designer (who is late many times)", title: "vansh the chief design organizer"}
 ];
 
 const imageLogos = [
