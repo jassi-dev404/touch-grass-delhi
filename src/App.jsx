@@ -2,75 +2,59 @@ import { useEffect } from "react";
 import EchoText from "./EchoText";
 import PillNav from "./PillNav";
 import LogoLoop from "./LogoLoop";
-import FlexCarousel from './FlexCarousel';
+import FlexCarousel from "./FlexCarousel";
 import Title from "./assets/Title.ttf";
 import cool_grass from "./assets/cool_grass.png";
 import logo from "./assets/touch_hindi.png";
 import our_sponsor from "./assets/our_sponsor.png";
-import more_info from "./assets/more_info.png"
-import organizers_t from "./assets/organizers_t.png"
-import aditya1 from "./assets/pics/aditya1.png"
-import jassi1 from "./assets/pics/jassi1.jpg"
-import nitik1 from "./assets/pics/nitik1.JPG"
-import jassi2 from "./assets/pics/jassi2.jpg"
-import nitik2 from "./assets/pics/nitik2.jpg"
-
+import more_info from "./assets/more_info.png";
+import organizers_t from "./assets/organizers_t.png";
+import aditya1 from "./assets/pics/aditya1.png";
+import jassi1 from "./assets/pics/jassi1.jpg";
+import nitik1 from "./assets/pics/nitik1.JPG";
+import jassi2 from "./assets/pics/jassi2.jpg";
+import nitik2 from "./assets/pics/nitik2.jpg";
+import aditya2 from "./assets/pics/aditya2.jpg";
+import main_img from "./assets/main_head.png";
+import xyz from "./assets/xyz.png";
+import education from "./assets/education.png";
+import aadarsh1 from "./assets/pics/aadarsh1.jpeg";
 
 const items = [
-  { src: aditya1, alt: 'Aditya with his kuchupuchu', title: 'aditya the head organizer' },
-  { src: jassi1, alt: 'yes its me, same person coding this at 4am', title: 'jassi the chief tech organizer' },
-  { src: nitik1, alt: 'A clay bust in profile', title: 'nitik the vice-head organizer' },
-  { src: jassi2, alt: 'yes its me, same person coding this at 4am', title: 'jassi the chief tech organizer' },
-  { src: nitik2, alt: 'yes its me, same person coding this at 4am', title: 'nitik the vice-head organizer' }
+  { src: aditya1, alt: "Aditya with his kuchupuchu", title: "aditya the head organizer" },
+  { src: aditya2, alt: "Aditya with his kuchupuchu", title: "aditya the head organizer" },
+  { src: jassi1, alt: "yes its me, same person coding this at 4am", title: "jassi the chief tech organizer" },
+  { src: nitik1, alt: "nitik wow very cool guy", title: "nitik the vice-head organizer" },
+  { src: jassi2, alt: "yes its me, same person coding this at 4am", title: "jassi the chief tech organizer" },
+  { src: nitik2, alt: "nitik wow very cool guy", title: "nitik the vice-head organizer" },
+  { src: aadarsh1, alt: "yes he did something", title: "aadarsh from logistic department" },
 ];
 
-import {
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiTailwindcss,
-} from "react-icons/si";
-
-const techLogos = [
-  {
-    node: <SiReact />,
-    title: "React",
-    href: "https://react.dev",
-    hoverColor: "#61dafb",
-  },
-  {
-    node: <SiNextdotjs />,
-    title: "Next.js",
-    href: "https://nextjs.org",
-  },
-  {
-    node: <SiTypescript />,
-    title: "TypeScript",
-    href: "https://www.typescriptlang.org",
-    hoverColor: "#3178c6",
-  },
-  {
-    node: <SiTailwindcss />,
-    title: "Tailwind CSS",
-    href: "https://tailwindcss.com",
-    hoverColor: "#38bdf8",
-  },
+const imageLogos = [
+  { src: xyz, alt: ".XYZ", title: ".XYZ", href: "https://gen.xyz/" },
+  { src: education, alt: "Shekunj Education", title: "Shekunj Education", href: "https://www.shekunj.com/" },
 ];
 
 function App() {
+  useEffect(() => {
+    const updateViewportHeight = () => {
+      document.documentElement.style.setProperty("--app-height", `${window.innerHeight}px`);
+    };
 
-    useEffect(() => {
-      const isMobile = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
-      );
-      if (isMobile && !window.location.pathname.includes("mobile.html")) {
-        window.location.replace("/mobile.html");
-      }
-    }, []);
+    updateViewportHeight();
+    window.addEventListener("resize", updateViewportHeight);
+    window.addEventListener("orientationchange", updateViewportHeight);
+
+    return () => {
+      window.removeEventListener("resize", updateViewportHeight);
+      window.removeEventListener("orientationchange", updateViewportHeight);
+    };
+  }, []);
 
   return (
     <main className="relative z-10 isolate min-h-screen">
       <link rel="icon" type="image/png" href={logo} />
+
       <style>{`
         @font-face {
           font-family: 'Title';
@@ -81,23 +65,23 @@ function App() {
         }
       `}</style>
 
-      <div id="first" className="relative pb-32">
+      <div id="first" className="relative pb-32 min-h-screen">
         <img
           id="logo"
           src={logo}
           alt="Touch Grass Delhi"
-          style={{ position: "absolute", right: "1px", top: "0px" }}
+          style={{ position: "absolute", right: "1px", top: "10px" }}
           className="object-cover transition-transform duration-500 hover:rotate-10 z-30"
         />
 
-        <div className="fixed top-0 left-1/2 -translate-x-1/2 pt-10 z-50 flex justify-center items-center">
+        <div className="fixed top-0 left-1/2 -translate-x-1/2 pt-6 z-50 flex justify-center items-center">
           <PillNav
             items={[
               { label: "Start", href: "#first" },
               { label: "Sponsors", href: "#second" },
-              { label: "Details", href: "#details"},
+              { label: "Details", href: "#details" },
               { label: "Organizers", href: "#organizers" },
-              { label: "Join Slack", href: "https://hackclub.enterprise.slack.com/archives/C0CBJT68171" },
+              { label: "Connect", href: "https://hackclub.enterprise.slack.com/archives/C0CBJT68171" },
               { label: "Register", href: "https://docs.google.com/forms/d/e/1FAIpQLScF8G5HjINZx5b4ulPnZ7N5Ly30h4t9xGdVaWk2UocRqsythg/viewform?pli=1" }
             ]}
             activeHref="/"
@@ -107,88 +91,31 @@ function App() {
           />
         </div>
 
-        <img src={cool_grass} alt="Grass" className="h-75 w-auto z-0" />
-
-        <div className="flex flex-col justify-center items-center">
-          <div className="flex flex-row justify-center items-center z-10">
-            <EchoText
-              text="TOUCHGRASS DELHI"
-              className="[-webkit-text-stroke:5px_#012304]"
-              fontSize="clamp(6rem, 19vw, 14rem)"
-              font="Title, monospace"
-              echoes={18}
-              lag={0.23}
-              offset={36}
-              direction="right"
-              fade={0.65}
-              blur={3}
-              tint={false}
-              echoStyle="solid"
-              echoScale={1}
-              mode="pointer"
-              trail="pointer"
-              clickBurst={false}
-              cursorRadius={320}
-              duration={900}
-              ease="ease-in-out"
-              fontWeight={700}
-              color="#b5ff00"
-            />
-          </div>
-          <div className="flex flex-row pt-10 justify-center items-center">
-            <EchoText
-              text="CODE. CREATE. TOUCH GRASS."
-              className="[-webkit-text-stroke:3px_#012304]"
-              font="Title, monospace"
-              fontSize="clamp(3rem, 6vw, 5rem)"
-              echoes={18}
-              lag={0.23}
-              offset={36}
-              direction="right"
-              fade={0.65}
-              blur={3}
-              tint={false}
-              echoStyle="solid"
-              echoScale={1}
-              mode="pointer"
-              trail="pointer"
-              clickBurst={false}
-              cursorRadius={320}
-              duration={900}
-              ease="ease-in-out"
-              fontWeight={700}
-              color="#b5ff00"
-            />
-          </div>
+        <div className="relative flex flex-col justify-center items-center pt-20">
+          <img src={main_img} className="object-cover transition-transform duration-500 hover:scale-120 z-30" />
         </div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br/>
       </div>
 
       <div id="second" className="flex flex-col justify-center items-center -mt-28 pb-5 w-full">
-        <img src={our_sponsor} alt="Our sponsors" class="object-cover transition-transform duration-500 hover:rotate-10 hover:scale-125 z-30" />
-        <p>just examples for now ;)</p>
-
-        <div className="-mt-90 w-full overflow-hidden">
+        <img
+          src={our_sponsor}
+          alt="Our sponsors"
+          className="object-cover transition-transform duration-500 hover:rotate-10 hover:scale-125 z-30"
+        />
+        <hr></hr>
+        <div className="-mt-24 w-full overflow-hidden bg-whitish">
+        <hr></hr>
           <LogoLoop
-            logos={techLogos}
+            logos={imageLogos}
             layout="wave"
             direction="left"
-            labels="hover"
+            labels="below"
             speed={100}
             hoverSpeed={0}
-            logoHeight={44}
+            logoHeight={40}
             gap={56}
             bend={0.5}
-            focus={0.7}
+            focus={1}
             magnify={2}
             muted={1}
             tiltX={0}
@@ -198,13 +125,19 @@ function App() {
             fadeOut={true}
             step={true}
             draggable={false}
-            scaleOnHover={false}
+            scaleOnHover={true}
             intro={true}
             ariaLabel="Our Sponsors"
           />
+                  <hr></hr>
         </div>
-        <img src={more_info} class="object-cover transition-transform duration-500 hover:scale-110 z-30"></img>
+
+        <img
+          src={more_info}
+          className="object-cover transition-transform duration-500 hover:scale-110 z-30 w-[80%]"
+        />
       </div>
+
       <div id="details">
         <br />
         <br />
@@ -247,14 +180,21 @@ function App() {
         <br />
         <br />
         <br />
-        <br/>
       </div>
+
       <div id="organizers">
-        <br></br>
-        <br></br>
-        <img src={organizers_t} alt="Our organizers" class="object-cover transition-transform duration-500 rotate-10 hover:-rotate-10 hover:scale-125 z-30" />
-        <hr></hr>
-        <div style={{ width: '100%', height: '560px', position: 'relative', backgroundColor: "#F9F6EE"}}>
+        <br />
+        <br />
+
+        <img
+          src={organizers_t}
+          alt="Our organizers"
+          className="object-cover transition-transform duration-500 rotate-10 hover:-rotate-10 hover:scale-125 z-30"
+        />
+
+        <hr />
+
+        <div style={{ width: "100%", height: "560px", position: "relative", backgroundColor: "#F9F6EE" }}>
           <FlexCarousel
             items={items}
             preset="liquid"
@@ -269,21 +209,56 @@ function App() {
             interval={2}
           />
         </div>
-        <hr></hr>
-        <br></br>
-        <h1 class="text-8xl pl-2 font-[monocraft] text-[#3d6c03]">CONTACT US:</h1>
-        <ol id="cool_yes">
-          <li class="text-3xl pl-2 font-[monocraft] text-[#b5ff00]"><u><span><a href="https://www.instagram.com/touchgrassdelhi?xtok=MWJmMTBzMW92ajU1cg==" target="_blank">INSTAGRAM</a></span></u></li>
-          <li class="text-3xl pl-2 font-[monocraft] text-[#b5ff00]"><u><span><a href="mailto:touchgrasshackathon@gmail.com" target="_blank">EMAIL</a></span></u></li>
-          <li class="text-3xl pl-2 font-[monocraft] text-[#b5ff00]"><u><span><a href="tel:+919354232874" target="_blank">PHONE/WHATSAPP</a></span></u></li>
-        </ol>
-        <hr></hr>
-        <p class="bg-whitish flex justify-center items-center font-mono text-6xl">made with love by..<u><span class="text-zinc-500"><a href="https://github.com/jassi-dev404" target="_blank">jassi</a></span></u></p>
-        <hr></hr>
+
+        <hr />
+
+        <div className="flex flex-col justify-center items-center gap-6 py-10 px-4 w-full">
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12">
+            <a
+              href="https://www.instagram.com/touchgrassdelhi?xtok=MWJmMTBzMW92ajU1cg=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-2xl md:text-3xl font-mono text-[#b5ff00] hover:underline hover:underline-offset-4 transition-all duration-300"
+            >
+              INSTAGRAM
+            </a>
+            <a
+              href="mailto:touchgrasshackathon@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-2xl md:text-3xl font-mono text-[#b5ff00] hover:underline hover:underline-offset-4 transition-all duration-300"
+            >
+              EMAIL
+            </a>
+            <a
+              href="tel:+919354232874"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-2xl md:text-3xl font-mono text-[#b5ff00] hover:underline hover:underline-offset-4 transition-all duration-300"
+            >
+              PHONE/WHATSAPP
+            </a>
+          </div>
+
+          <hr className="w-full border-t-2 border-[#3d6c03]/30" />
+
+          <p className="text-xl md:text-2xl font-mono text-[#3d6c03]">
+            made with love by{" "}
+            <a
+              href="https://github.com/jassi-dev404"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#b5ff00] hover:text-[#3d6c03] underline underline-offset-4 transition-all duration-300"
+            >
+              jassi
+            </a>
+          </p>
+        </div>
+
+        <hr />
       </div>
     </main>
   );
 }
-
 
 export default App;
