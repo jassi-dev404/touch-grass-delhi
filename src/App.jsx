@@ -82,7 +82,7 @@ function App() {
           src={logo}
           alt="Touch Grass Delhi"
           style={{ position: "absolute", right: "1px", top: "10px" }}
-          className="object-cover transition-transform duration-500 hover:rotate-10 z-30"
+          className="object-cover transition-transform duration-500 hover:rotate-10 z-30 h-16 md:h-auto"
         />
 
         <div className="fixed top-0 left-1/2 -translate-x-1/2 pt-6 z-50 flex justify-center items-center">
@@ -113,8 +113,15 @@ function App() {
           alt="Our sponsors"
           className="object-cover transition-transform duration-500 hover:rotate-10 hover:scale-125 z-30"
         />
+        {isMobile && (
+          <>
+            <br />
+            <br />
+            <br />
+          </>
+        )}
         <hr></hr>
-        <div className="-mt-24 w-full overflow-hidden bg-whitish">
+        <div className="-mt-24 w-full overflow-hidden bg-whitish h-32 md:h-auto flex flex-col justify-center">
           <hr></hr>
           <LogoLoop
             logos={imageLogos}
@@ -123,7 +130,7 @@ function App() {
             labels="below"
             speed={100}
             hoverSpeed={0}
-            logoHeight={40}
+            logoHeight={isMobile ? 28 : 40}
             gap={56}
             bend={0.5}
             focus={1}
